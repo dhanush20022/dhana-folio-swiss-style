@@ -1,12 +1,25 @@
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="container mx-auto max-w-4xl text-center">
         <div className="animate-fade-in">
+          <div className="mb-8 flex justify-center">
+            <Avatar className="h-32 w-32 md:h-40 md:w-40 ring-4 ring-primary/10">
+              <AvatarImage 
+                src="/lovable-uploads/d13e715e-7f15-40a8-9f53-859c717d49cc.png" 
+                alt="Dhana Sekhar Dandugula"
+                className="object-cover"
+              />
+              <AvatarFallback className="text-2xl md:text-3xl font-medium">
+                DS
+              </AvatarFallback>
+            </Avatar>
+          </div>
           <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight">
             Hi, I'm{" "}
             <span className="font-medium">Dhana Sekhar Dandugula</span>
