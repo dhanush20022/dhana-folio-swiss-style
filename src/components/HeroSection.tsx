@@ -4,6 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const HeroSection = () => {
+  const handleDownloadResume = () => {
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // You'll need to upload your resume PDF to the public folder
+    link.download = 'Dhana_Sekhar_Dandugula_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleLinkedInClick = () => {
+    window.open("https://www.linkedin.com/in/dhana-sekhar-dandugula-b0388225b", "_blank");
+  };
+
+  const handleSendMail = () => {
+    window.open("mailto:suryasarath252@gmail.com?subject=Hello%20Dhana&body=Hi%20Dhana,%0D%0A%0D%0AI%20would%20like%20to%20connect%20with%20you.", "_blank");
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="container mx-auto max-w-5xl">
@@ -35,6 +53,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="group px-8 py-3 text-base hover:scale-105 transition-all duration-200"
+                onClick={handleDownloadResume}
               >
                 Download Resume
               </Button>
@@ -42,7 +61,7 @@ const HeroSection = () => {
                 variant="outline"
                 size="lg"
                 className="group px-8 py-3 text-base hover:scale-105 transition-all duration-200"
-                onClick={() => window.open("https://linkedin.com", "_blank")}
+                onClick={handleLinkedInClick}
               >
                 Connect on LinkedIn
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
